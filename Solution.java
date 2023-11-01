@@ -14,14 +14,13 @@ class Node<T> {
 }
 
 class Solution {
-  public static ArrayList<String> linkedListValues(Node<String> head) {
-    Node<String> node = head;
-    ArrayList<String> nodeList = new ArrayList<>();
+  public static List<String> linkedListValues(Node<Object> head) {
+    List<String> nodeList = new ArrayList<>();
     do {
-      nodeList.add(node.val);
-      node = node.next;
+      nodeList.add((String) head.val);
+      head = head.next;
     }
-    while (node != null);
+    while (head != null);
     return nodeList;
   }
 
@@ -39,11 +38,11 @@ class Solution {
     System.out.println(Solution.linkedListValues(a));
     // -> [ "a", "b", "c", "d" ]
 
-    Node<String> one = new Node<>("1");
-    Node<String> two = new Node<>("2");
-    Node<String> three = new Node<>("3");
-    Node<String> four = new Node<>("4");
-    Node<String> five = new Node<>("5");
+    Node<Integer> one = new Node<>(1);
+    Node<Integer> two = new Node<>(1);
+    Node<Integer> three = new Node<>(1);
+    Node<Integer> four = new Node<>(1);
+    Node<Integer> five = new Node<>(1);
     one.next = two;
     two.next = three;
     three.next = four;
